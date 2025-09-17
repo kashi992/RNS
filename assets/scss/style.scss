@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
     --theme-color: #EB3300;
@@ -7953,6 +7954,15 @@ a.text-theme:hover {
     border-radius: 7px
 }
 
+.quoteModal .request-quote-form .modal-header {
+    border: 0;
+}
+
+.quoteModal .request-quote-form form .row {
+    row-gap: 5px;
+    display: grid !important;
+}
+
 
 
 .quoteModal .modal-content {
@@ -7973,19 +7983,22 @@ a.text-theme:hover {
 }
 
 .quoteModal .modal-header h4 {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .quoteModal .modal-header .btn-close {
-    padding: 0;
-    margin: 0;
-    width: auto;
-    background: unset;
-    height: auto;
-    font-size: 25px;
-    line-height: 1;
+    background-color: unset;
+    border: 0;
     color: #fff;
-    opacity: 1
+    font-size: 40px;
+    line-height: 0.5;
+    width: auto;
+    height: auto;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    opacity: 1;
 }
 
 .flexAlign {
@@ -8036,6 +8049,18 @@ a.text-theme:hover {
         z-index: 9999;
         padding-right: 0 !important;
 
+        .modal-dialog {
+            max-width: 950px;
+
+            @media screen and (max-width: 1370px) {
+                max-width: 800px;
+            }
+
+            @media screen and (max-width: 991px) {
+                max-width: calc(100% - 20px);
+            }
+        }
+
         &::before {
             content: "";
             background-color: rgb(0, 0, 0, 0.6);
@@ -8049,6 +8074,7 @@ a.text-theme:hover {
     .modal-content {
         background-color: var(--theme-color);
         color: #fff;
+        padding: 20px;
     }
 
     .modal-header {
@@ -8057,13 +8083,41 @@ a.text-theme:hover {
 
     .modal-body {
         h2 {
-            font-size: 22px;
+            font-size: 30px;
             text-align: center;
             color: #fff;
             margin-bottom: 20px;
 
+            @media screen and (max-width: 1370px) {
+                font-size: 25px;
+            }
+
             b {
-                color: #000;
+                color: var(--yellow-color);
+                display: block;
+                margin-top: 10px;
+                margin-bottom: 25px;
+                font-size: 40px;
+                font-weight: 700;
+                font-family: "Space Grotesk", sans-serif;
+
+                @media screen and (max-width: 1370px) {
+                    font-size: 30px;
+                }
+
+                @media screen and (max-width: 575px) {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+
+                span {
+                    text-decoration: line-through !important;
+                    // text-decoration-color: #000 !important;
+                }
+            }
+
+            br {
+                display: none;
             }
         }
     }
@@ -8072,15 +8126,27 @@ a.text-theme:hover {
         background-color: unset;
         border: 0;
         color: #fff;
-        font-size: 30px;
+        font-size: 40px;
         line-height: 0.5;
         width: auto;
         height: auto;
         padding: 0;
+        position: absolute;
+        right: 30px;
+        top: 30px;
     }
 
     h4 {
         color: #fff;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        line-height: 1.2;
+        margin-bottom: 10px !important;
+
+        @media screen and (max-width: 1370px) {
+            font-size: 30px;
+        }
     }
 
     p {
@@ -8136,6 +8202,46 @@ a.text-theme:hover {
             margin-left: auto;
             margin-right: auto;
             font-weight: 700;
+        }
+    }
+
+    // qr sec
+    .qrSec {
+        margin-top: 20px;
+
+        @media (max-width: 575px) {
+            margin-top: 10px;
+        }
+
+        img {
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 15px;
+
+            @media (max-width: 1370px) {
+                width: 130px;
+            }
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            text-align: center;
+                @media (max-width: 575px) {
+            font-size: 16px;
+        }
+
+            a {
+                border-bottom: 1px solid var(--yellow-color);
+                color: var(--yellow-color);
+
+                i {
+                    font-size: 16px;
+                    transform: rotate(-45deg) translate(0px, -3px);
+                }
+            }
         }
     }
 }
